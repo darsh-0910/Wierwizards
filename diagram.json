@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "author": "Darshan Nanda kumar",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -12.6, "left": 425.2, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -9, "left": 85.8, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -3.6, "left": 493.4, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -3.6,
+      "left": 589.4,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -45.6,
+      "left": 673.8,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 46.7, "left": -115.4, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": 46.7, "left": 9.4, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 72,
+      "left": 479.45,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 72,
+      "left": 575.45,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "led1:A", "bb1:8t.a", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:7t.a", "", [ "$bb" ] ],
+    [ "bz1:1", "bb1:27t.a", "", [ "$bb" ] ],
+    [ "bz1:2", "bb1:28t.a", "", [ "$bb" ] ],
+    [ "led2:A", "bb1:18t.a", "", [ "$bb" ] ],
+    [ "led2:C", "bb1:17t.a", "", [ "$bb" ] ],
+    [ "r2:1", "bb1:7t.b", "", [ "$bb" ] ],
+    [ "r2:2", "bb1:7b.f", "", [ "$bb" ] ],
+    [ "r1:1", "bb1:17t.b", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:17b.f", "", [ "$bb" ] ],
+    [ "bb1:7b.g", "uno:A5", "green", [ "v0" ] ],
+    [ "bb1:8t.b", "uno:A4", "green", [ "v163.2", "h-157.8" ] ],
+    [ "bb1:17b.g", "uno:A3", "green", [ "v115.2", "h-253.7" ] ],
+    [ "bb1:18t.b", "uno:A2", "green", [ "v220.8", "h-272.8" ] ],
+    [ "bb1:27t.b", "uno:A1", "green", [ "v249.6", "h-364.8" ] ],
+    [ "uno:GND.2", "bb1:28t.b", "black", [ "v38.3", "h435.9" ] ],
+    [ "pot1:GND", "uno:5V", "black", [ "v105.6", "h355.2" ] ],
+    [ "uno:3.3V", "pot1:SIG", "red", [ "v28.7", "h-341.4" ] ],
+    [ "pot1:VCC", "uno:A0", "red", [ "v86.4", "h383.2" ] ],
+    [ "uno:RESET", "pot2:VCC", "green", [ "v67.1", "h-196.7" ] ],
+    [ "pot2:SIG", "uno:GND.1", "green", [ "v-144", "h181.7" ] ],
+    [ "pot2:GND", "uno:5V", "black", [ "v144", "h230.4", "v9.6" ] ]
+  ],
+  "dependencies": {}
+}
